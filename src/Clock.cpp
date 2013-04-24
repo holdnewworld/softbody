@@ -21,8 +21,8 @@ Clock::Clock(const float interval)
 , _counter()
 #endif
 {
-	_start = _previous = GetTime();
-	_interval = uint32_t(interval);
+    _start = _previous = GetTime();
+    _interval = uint32_t(interval);
 }
 
 //------------------------------------------------------------------------------
@@ -30,16 +30,17 @@ Clock::Clock(const float interval)
 //------------------------------------------------------------------------------
 void Clock::Tick()
 {
-	_current = GetTime();
-	_dt = _current - _previous;
-	_previous = _current;
-	_count++;
+    _current = GetTime();
+    _dt = _current - _previous;
+    _previous = _current;
+    _count++;
 
-	if (_current - _start > _interval) {
-		_fps = _count / double(_current - _start);
-		_start = _current;
-		_count = 0;
-	}
+    if (_current - _start > _interval)
+    {
+        _fps = _count / double(_current - _start);
+        _start = _current;
+        _count = 0;
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ void Clock::Tick()
 //------------------------------------------------------------------------------
 double Clock::GetDeltaTime()
 {
-	return _dt;
+    return _dt;
 }
 
 //------------------------------------------------------------------------------
@@ -55,7 +56,7 @@ double Clock::GetDeltaTime()
 //------------------------------------------------------------------------------
 double Clock::GetFPS()
 {
-	return _fps;
+    return _fps;
 }
 
 //------------------------------------------------------------------------------
@@ -64,9 +65,9 @@ double Clock::GetFPS()
 double Clock::GetTime()
 {
 #if defined(WIN32)
-	QueryPerformanceFrequency(&_frequency);
-	QueryPerformanceCounter(&_counter);
-	return (double(_counter.QuadPart) / double(_frequency.QuadPart));
+    QueryPerformanceFrequency(&_frequency);
+    QueryPerformanceCounter(&_counter);
+    return (double(_counter.QuadPart) / double(_frequency.QuadPart));
 #elif __MACH__
     clock_serv_t cclock;
     mach_timespec_t mts;
@@ -82,5 +83,5 @@ double Clock::GetTime()
 //------------------------------------------------------------------------------
 void Clock::SetInterval(const float interval)
 {
-	_interval = uint32_t(interval);
+    _interval = uint32_t(interval);
 }

@@ -5,13 +5,13 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::Sign(const Real x)
 {
-	if (x < Real(0)) {
-		return Real(-1);
-	}
-	if (x > Real(0)) {
-		return Real(1);
-	}
-	return Real(0);
+    if (x < Real(0)) {
+        return Real(-1);
+    }
+    if (x > Real(0)) {
+        return Real(1);
+    }
+    return Real(0);
 }
 
 //------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::Abs(const Real x)
 {
-	return x < Real(0) ? -x : x;
+    return x < Real(0) ? -x : x;
 }
 
 //------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::Min(const Real a, const Real b)
 {
-	return a < b ? a : b;
+    return a < b ? a : b;
 }
 
 //------------------------------------------------------------------------------
@@ -41,19 +41,19 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::Min(const Real a, const Real b, const Real c)
 {
-	if (a < b) {
-		if (a < c) {
-			return a;
-		} else {
-			return c;
-		}
-	} else {
-		if (b < c) {
-			return b;
-		} else {
-			return c;
-		}
-	}
+    if (a < b) {
+        if (a < c) {
+            return a;
+        } else {
+            return c;
+        }
+    } else {
+        if (b < c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::Max(const Real a, const Real b)
 {
-	return a < b ? b : a;
+    return a < b ? b : a;
 }
 
 //------------------------------------------------------------------------------
@@ -73,19 +73,19 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::Max(const Real a, const Real b, const Real c)
 {
-	if (a > b) {
-		if (a > c) {
-			return a;
-		} else {
-			return c;
-		}
-	} else {
-		if (b > c) {
-			return b;
-		} else {
-			return c;
-		}
-	}
+    if (a > b) {
+        if (a > c) {
+            return a;
+        } else {
+            return c;
+        }
+    } else {
+        if (b > c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
 }
 
 
@@ -96,7 +96,7 @@ template<typename Real>
 inline bool
 FloatUtil<Real>::NearlyZero(const Real x)
 {
-	return Abs(x) < EPSILON;
+    return Abs(x) < EPSILON;
 }
 
 //------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ template<typename Real>
 inline bool
 FloatUtil<Real>::NearlyEqual(const Real x, const Real y)
 {
-	return Abs(x - y) < EPSILON;
+    return Abs(x - y) < EPSILON;
 }
 
 //------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::ToDegrees(const Real radians)
 {
-	return RAD_TO_DEG * radians;
+    return RAD_TO_DEG * radians;
 }
 
 //------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ template<typename Real>
 inline Real
 FloatUtil<Real>::ToRadians(const Real degrees)
 {
-	return DEG_TO_RAD * degrees;
+    return DEG_TO_RAD * degrees;
 }
 
 //------------------------------------------------------------------------------
@@ -136,7 +136,7 @@ template<>
 inline float
 FloatUtil<float>::Pow(const float x, const float y)
 {
-	return ::powf(x, y);
+    return ::powf(x, y);
 }
 
 //------------------------------------------------------------------------------
@@ -146,7 +146,7 @@ template<>
 inline double
 FloatUtil<double>::Pow(const double x, const double y)
 {
-	return ::pow(x, y);
+    return ::pow(x, y);
 }
 
 //------------------------------------------------------------------------------
@@ -156,7 +156,7 @@ template<>
 inline float
 FloatUtil<float>::Sqrt(const float x)
 {
-	return ::sqrtf(x);
+    return ::sqrtf(x);
 }
 
 //------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ template<>
 inline double
 FloatUtil<double>::Sqrt(const double x)
 {
-	return ::sqrt(x);
+    return ::sqrt(x);
 }
 
 //------------------------------------------------------------------------------
@@ -176,12 +176,12 @@ template<>
 inline float
 FloatUtil<float>::InverseSqrt(float x)
 {
-	float halfX = 0.5f * x;
-	int i = *(int*)&x;
-	i = 0x5f3759df - (i >> 1);
-	x = *(float*)&i;
-	x = x * (1.5f - halfX * x * x);
-	return x;
+    float halfX = 0.5f * x;
+    int i = *(int*)&x;
+    i = 0x5f3759df - (i >> 1);
+    x = *(float*)&i;
+    x = x * (1.5f - halfX * x * x);
+    return x;
 }
 
 //------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ template<>
 inline double
 FloatUtil<double>::InverseSqrt(double x)
 {
-	return 1.0 / ::sqrt(x);
+    return 1.0 / ::sqrt(x);
 }
 
 //------------------------------------------------------------------------------
@@ -201,7 +201,7 @@ template<typename Real>
 inline void
 FloatUtil<Real>::Lerp(Real& r, const Real a, const Real b, const Real s)
 {
-	r = a + s * (b - a);
+    r = a + s * (b - a);
 }
 
 //------------------------------------------------------------------------------
@@ -211,7 +211,7 @@ template<>
 inline float
 FloatUtil<float>::Exp(const float x)
 {
-	return ::expf(x);
+    return ::expf(x);
 }
 
 //------------------------------------------------------------------------------
@@ -221,7 +221,7 @@ template<>
 inline double
 FloatUtil<double>::Exp(const double x)
 {
-	return ::exp(x);
+    return ::exp(x);
 }
 
 //------------------------------------------------------------------------------
@@ -231,7 +231,7 @@ template<>
 inline float
 FloatUtil<float>::Ln(const float x)
 {
-	return ::logf(x);
+    return ::logf(x);
 }
 
 //------------------------------------------------------------------------------
@@ -241,7 +241,7 @@ template<>
 inline double
 FloatUtil<double>::Ln(const double x)
 {
-	return ::log(x);
+    return ::log(x);
 }
 
 //------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ template<>
 inline float
 FloatUtil<float>::Sin(const float radians)
 {
-	return ::sinf(radians);
+    return ::sinf(radians);
 }
 
 //------------------------------------------------------------------------------
@@ -261,7 +261,7 @@ template<>
 inline double
 FloatUtil<double>::Sin(const double radians)
 {
-	return ::sin(radians);
+    return ::sin(radians);
 }
 
 //------------------------------------------------------------------------------
@@ -271,7 +271,7 @@ template<>
 inline float
 FloatUtil<float>::Cos(const float radians)
 {
-	return ::cosf(radians);
+    return ::cosf(radians);
 }
 
 //------------------------------------------------------------------------------
@@ -281,7 +281,7 @@ template<>
 inline double
 FloatUtil<double>::Cos(const double radians)
 {
-	return ::cos(radians);
+    return ::cos(radians);
 }
 
 //------------------------------------------------------------------------------
@@ -291,7 +291,7 @@ template<>
 inline float
 FloatUtil<float>::Tan(const float radians)
 {
-	return ::tanf(radians);
+    return ::tanf(radians);
 }
 
 //------------------------------------------------------------------------------
@@ -301,7 +301,7 @@ template<>
 inline double
 FloatUtil<double>::Tan(const double radians)
 {
-	return ::tan(radians);
+    return ::tan(radians);
 }
 
 //------------------------------------------------------------------------------
@@ -311,7 +311,7 @@ template<>
 inline float
 FloatUtil<float>::ArcSin(const float x)
 {
-	return ::asinf(x);
+    return ::asinf(x);
 }
 
 //------------------------------------------------------------------------------
@@ -321,7 +321,7 @@ template<>
 inline double
 FloatUtil<double>::ArcSin(const double x)
 {
-	return ::asin(x);
+    return ::asin(x);
 }
 
 //------------------------------------------------------------------------------
@@ -331,7 +331,7 @@ template<>
 inline float
 FloatUtil<float>::ArcCos(const float x)
 {
-	return ::acosf(x);
+    return ::acosf(x);
 }
 
 //------------------------------------------------------------------------------
@@ -341,7 +341,7 @@ template<>
 inline double
 FloatUtil<double>::ArcCos(const double x)
 {
-	return ::acos(x);
+    return ::acos(x);
 }
 
 //------------------------------------------------------------------------------
@@ -351,7 +351,7 @@ template<>
 inline float
 FloatUtil<float>::ArcTan(const float x)
 {
-	return ::atanf(x);
+    return ::atanf(x);
 }
 
 //------------------------------------------------------------------------------
@@ -361,7 +361,7 @@ template<>
 inline double
 FloatUtil<double>::ArcTan(const double x)
 {
-	return ::atan(x);
+    return ::atan(x);
 }
 
 //------------------------------------------------------------------------------
@@ -371,7 +371,7 @@ template<>
 inline float
 FloatUtil<float>::ArcTan2(const float x, const float y)
 {
-	return ::atan2f(x, y);
+    return ::atan2f(x, y);
 }
 
 //------------------------------------------------------------------------------
@@ -381,5 +381,5 @@ template<>
 inline double
 FloatUtil<double>::ArcTan2(const double x, const double y)
 {
-	return ::atan2(x, y);
+    return ::atan2(x, y);
 }
