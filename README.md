@@ -25,8 +25,6 @@ The rest of the relevant parameters should be adjustable at run-time. Read the m
 
 Enjoy!
 
--Tim
-
 ![Screenshot 1]
 (https://raw.github.com/forscience/SoftBody/master/screenshots/screenshot1.png)
 ![Screenshot 2]
