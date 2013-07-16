@@ -4,7 +4,7 @@
 inline SoftBody::Surface
 SoftBody::GetSurface()
 {
-	return _surface;
+    return _surface;
 }
 
 //------------------------------------------------------------------------------
@@ -13,7 +13,7 @@ SoftBody::GetSurface()
 inline float
 SoftBody::GetInternalPressure()
 {
-	return _pressure;
+    return _pressure;
 }
 
 //------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ SoftBody::GetInternalPressure()
 inline void
 SoftBody::SetInternalPressure(const float pressure)
 {
-	_pressure = pressure;
+    _pressure = pressure;
 }
 
 //------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ SoftBody::SetInternalPressure(const float pressure)
 inline float
 SoftBody::GetTargetPressure()
 {
-	return _targetPressure;
+    return _targetPressure;
 }
 
 //------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ SoftBody::GetTargetPressure()
 inline void
 SoftBody::SetTargetPressure(const float targetPressure)
 {
-	_targetPressure = targetPressure;
+    _targetPressure = targetPressure;
 }
 
 //------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ SoftBody::SetTargetPressure(const float targetPressure)
 inline float
 SoftBody::GetInternalTemperature()
 {
-	return _temperature;
+    return _temperature;
 }
 
 //------------------------------------------------------------------------------
@@ -58,8 +58,8 @@ SoftBody::GetInternalTemperature()
 inline void
 SoftBody::SetInternalTemperature(const float temperature)
 {
-	_temperature = temperature;
-	_buoyancy = Vector3f(0.0f, temperature*0.1f, 0.0f);
+    _temperature = temperature;
+    _buoyancy = Vector3f(0.0f, temperature*0.1f, 0.0f);
 }
 
 //------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ SoftBody::SetInternalTemperature(const float temperature)
 inline void
 SoftBody::SetSpringDamping(const float damping)
 {
-	_damping = damping;
+    _damping = damping;
 }
 
 //------------------------------------------------------------------------------
@@ -77,9 +77,9 @@ SoftBody::SetSpringDamping(const float damping)
 inline void
 SoftBody::SetSpringConstant(const float constant)
 {
-	for (uint32_t i = 0; i < _numEdges; ++i) {
-		_edges[i].springConstant = constant;
-	}
+    for (uint32_t i = 0; i < _numEdges; ++i) {
+        _edges[i].springConstant = constant;
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ SoftBody::SetSpringConstant(const float constant)
 inline void
 SoftBody::SetGravity(const Vector3f& gravity)
 {
-	_gravity = gravity;
+    _gravity = gravity;
 }
 
 //------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ SoftBody::SetGravity(const Vector3f& gravity)
 inline void
 SoftBody::AddClipPlane(const Planef& plane)
 {
-	_clipPlanes.push_back(plane);
+    _clipPlanes.push_back(plane);
 }
 
 //------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ SoftBody::AddClipPlane(const Planef& plane)
 inline void
 SoftBody::ClearClipPlanes()
 {
-	_clipPlanes.clear();
+    _clipPlanes.clear();
 }
 
 //------------------------------------------------------------------------------
@@ -115,15 +115,15 @@ SoftBody::ClearClipPlanes()
 inline void
 SoftBody::FixNorthPole(const Cartesian3f& position)
 {
-	//
-	// Only fix the pole if the surface is a sphere.
-	// (Otherwise this method has no meaning.)
-	//
-	if (_surface == SURFACE_SPHERE) {
-		_vertices[0].position = position;
-		_vertices[0].velocity = Vector3f(0.0f, 0.0f, 0.0f);
-		_fixNorthPole = true;
-	}
+    //
+    // Only fix the pole if the surface is a sphere.
+    // (Otherwise this method has no meaning.)
+    //
+    if (_surface == SURFACE_SPHERE) {
+        _vertices[0].position = position;
+        _vertices[0].velocity = Vector3f(0.0f, 0.0f, 0.0f);
+        _fixNorthPole = true;
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ SoftBody::FixNorthPole(const Cartesian3f& position)
 inline bool
 SoftBody::IsNorthPoleFixed()
 {
-	return _fixNorthPole;
+    return _fixNorthPole;
 }
 
 //------------------------------------------------------------------------------
@@ -141,7 +141,7 @@ SoftBody::IsNorthPoleFixed()
 inline void
 SoftBody::ReleaseNorthPole()
 {
-	_fixNorthPole = false;
+    _fixNorthPole = false;
 }
 
 //------------------------------------------------------------------------------
@@ -150,15 +150,15 @@ SoftBody::ReleaseNorthPole()
 inline void
 SoftBody::FixSouthPole(const Cartesian3f& position)
 {
-	//
-	// Only fix the pole if the surface is a sphere.
-	// (Otherwise this method has no meaning.)
-	//
-	if (_surface == SURFACE_SPHERE) {
-		_vertices[_numVertices - 1].position = position;
-		_vertices[_numVertices - 1].velocity = Vector3f(0.0f, 0.0f, 0.0f);
-		_fixSouthPole = true;
-	}
+    //
+    // Only fix the pole if the surface is a sphere.
+    // (Otherwise this method has no meaning.)
+    //
+    if (_surface == SURFACE_SPHERE) {
+        _vertices[_numVertices - 1].position = position;
+        _vertices[_numVertices - 1].velocity = Vector3f(0.0f, 0.0f, 0.0f);
+        _fixSouthPole = true;
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -167,7 +167,7 @@ SoftBody::FixSouthPole(const Cartesian3f& position)
 inline bool
 SoftBody::IsSouthPoleFixed()
 {
-	return _fixSouthPole;
+    return _fixSouthPole;
 }
 
 //------------------------------------------------------------------------------
@@ -176,5 +176,5 @@ SoftBody::IsSouthPoleFixed()
 inline void
 SoftBody::ReleaseSouthPole()
 {
-	_fixSouthPole = false;
+    _fixSouthPole = false;
 }
