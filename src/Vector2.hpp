@@ -1,7 +1,7 @@
 #ifndef __Vector2_h__
 #define __Vector2_h__
 
-#include "FloatUtil.h++"
+#include "FloatUtil.hpp"
 
 //==============================================================================
 // Template Vector2

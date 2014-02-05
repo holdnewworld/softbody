@@ -6,14 +6,15 @@ LDFLAGS = -Wall $(DEBUG) -framework GLUT -framework OpenGL -framework Cocoa
 softbody : $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o softbody
 
-Clock.o : Clock.h++ Clock.c++
-	$(CC) $(CFLAGS) Clock.c++
+Clock.o : Clock.hpp Clock.cpp
+	$(CC) $(CFLAGS) Clock.cpp
 
-SoftBody.o : SoftBody.h++ SoftBody.c++ FloatUtil.h++
-	$(CC) $(CFLAGS) SoftBody.c++
+SoftBody.o : SoftBody.hpp SoftBody.cpp FloatUtil.hpp
+	$(CC) $(CFLAGS) SoftBody.cpp
 
-Main.o : Main.c++
-	$(CC) $(CFLAGS) Main.c++
+Main.o : Main.cpp
+	$(CC) $(CFLAGS) Main.cpp
 
 clean:
-	\rm *.o *~ softbody
+	rm *.o softbody
+	rm -f *~

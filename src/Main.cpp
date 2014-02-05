@@ -6,9 +6,9 @@
 //==============================================================================
 #include <iostream>
 #include <sstream>
-#include "Common.h++"
-#include "SoftBody.h++"
-#include "Clock.h++"
+#include "Common.hpp"
+#include "SoftBody.hpp"
+#include "Clock.hpp"
 
 //==============================================================================
 // Global Variables

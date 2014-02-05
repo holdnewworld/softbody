@@ -1,9 +1,9 @@
 #ifndef __Coordinates_h__
 #define __Coordinates_h__
 
-#include "FloatUtil.h++"
-#include "Vector2.h++"
-#include "Vector3.h++"
+#include "FloatUtil.hpp"
+#include "Vector2.hpp"
+#include "Vector3.hpp"
 
 //==============================================================================
 // Template Cartesian2

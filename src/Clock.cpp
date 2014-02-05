@@ -1,4 +1,4 @@
-#include "Clock.h++"
+#include "Clock.hpp"
 
 #ifdef __MACH__
 #include <mach/clock.h>

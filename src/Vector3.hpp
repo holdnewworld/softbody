@@ -1,8 +1,8 @@
 #ifndef __Vector3_h__
 #define __Vector3_h__
 
-#include "Common.h++"
-#include "FloatUtil.h++"
+#include "Common.hpp"
+#include "FloatUtil.hpp"
 
 //==============================================================================
 // Template Vector3

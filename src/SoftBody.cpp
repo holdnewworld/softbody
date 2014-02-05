@@ -1,5 +1,5 @@
 #include <iostream>
-#include "SoftBody.h++"
+#include "SoftBody.hpp"
 
 
 //------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 #ifndef __Function_h__
 #define __Function_h__
 
-#include "Common.h++"
+#include "Common.hpp"
 
 //==============================================================================
 // Template Bivariate

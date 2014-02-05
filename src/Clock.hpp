@@ -6,7 +6,7 @@
 #include <windows.h>
 #endif
 
-#include "Common.h++"
+#include "Common.hpp"
 
 class Clock
 {

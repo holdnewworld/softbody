@@ -1,8 +1,8 @@
 #ifndef __Primitives_h__
 #define __Primitives_h__
 
-#include "Coordinates.h++"
-#include "Vector3.h++"
+#include "Coordinates.hpp"
+#include "Vector3.hpp"
 
 //==============================================================================
 // Template PointMass
